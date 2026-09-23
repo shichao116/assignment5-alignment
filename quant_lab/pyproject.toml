@@ -1,0 +1,27 @@
+[project]
+name = "quantlab"
+version = "0.1.0"
+description = "A small, honest backtesting lab for personal investors"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "yfinance>=0.2.40",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+quantlab = "quantlab.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["quantlab"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
